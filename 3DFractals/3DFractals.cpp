@@ -1,9 +1,17 @@
-// 3DFractals.cpp : This file contains the 'main' function. Program execution begins and ends there.
-
 #include <iostream>
 #include <GL/glew.h>
+#include "display.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    std::cout << "Hello World!\n";
+	Display display(800, 600, "Hello World");
+
+	while (!display.isClosed()) {
+
+		display.Clear(0.15f, 0.0f, 0.4f, 1.0f);
+
+		display.Update();
+
+	}
+	return 0;
 }
