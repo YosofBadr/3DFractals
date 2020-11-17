@@ -21,6 +21,8 @@ Shader::Shader(const std::string& fileName) {
 
 	// position needs to be spelled exactly the same in vertex shader program
 	glBindAttribLocation(m_program, 0, "position");
+	glBindAttribLocation(m_program, 1, "texCoord");
+
 
 	glLinkProgram(m_program);
 	CheckShaderError(m_program, GL_LINK_STATUS, true, "Error: Linking Shader");
